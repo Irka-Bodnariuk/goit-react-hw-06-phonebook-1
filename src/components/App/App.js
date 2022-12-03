@@ -3,12 +3,17 @@ import React, { Component } from 'react';
 
 import { nanoid } from 'nanoid';
 
+const INITIAL_STATE = {
+  name: '',
+  number: '',
+};
 export class App extends Component {
   // loginInputId = nanoid();
 
   state = {
     contacts: [],
     name: '',
+    number: '',
   };
 
   handleChange = event => {
@@ -19,16 +24,17 @@ export class App extends Component {
   handleSubmit = event => {
     event.preventDefault();
 
-    const { contacts, name } = this.state;
+    const { contacts, name, number } = this.state;
     // this.setState(prevState => {
     //   return { contacts: [...prevState.contacts, name] };
     // });
-    this.setState({ contacts: [...contacts, name] });
+    this.setState({ contacts: [...contacts, `${name}: ${number}`] });
+
     this.reset();
   };
 
   reset() {
-    this.setState({ name: '' });
+    this.setState({ ...INITIAL_STATE });
   }
   formSubmitHandler = data => {
     const a = data;
@@ -49,6 +55,18 @@ export class App extends Component {
               title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
               required
               value={this.state.name}
+              onChange={this.handleChange}
+            />
+          </label>
+          <label>
+            Number
+            <input
+              type="tel"
+              name="number"
+              pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
+              title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+              required
+              value={this.state.number}
               onChange={this.handleChange}
             />
           </label>
