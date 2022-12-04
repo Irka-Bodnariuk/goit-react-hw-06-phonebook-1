@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 
 import { nanoid } from 'nanoid';
 import { Filter } from 'components/Filter/Filter';
