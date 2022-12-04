@@ -5,6 +5,7 @@ import { nanoid } from 'nanoid';
 import { Filter } from 'components/Filter/Filter';
 import { ContactForm } from 'components/ContactForm/ContactForm';
 import { ContactList } from 'components/ContactList/ContactList';
+import { Box, TiTle } from './App.styled';
 
 export class App extends Component {
   state = {
@@ -50,16 +51,16 @@ export class App extends Component {
 
   render() {
     return (
-      <div>
-        <h2>Phonebook</h2>
+      <Box>
+        <TiTle>Phonebook</TiTle>
         <ContactForm onSubmit={this.formSubmitHandler} />
-        <h2>Contacts</h2>
+        <TiTle>Contacts</TiTle>
         <Filter value={this.state.filter} onChange={this.changeFilter} />
         <ContactList
           items={this.filteredPhoneBook()}
           onDelete={this.deleteContakt}
         />
-      </div>
+      </Box>
     );
   }
 }
