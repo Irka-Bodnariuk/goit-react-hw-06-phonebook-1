@@ -8,6 +8,6 @@ export const Label = styled.label`
 `;
 
 export const Input = styled.input`
-  width: 200px;
+  width: 100%;
   padding: 5px;
 `;

@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-
+import { GlobalStyle } from '../GlobalStyle';
 import { nanoid } from 'nanoid';
+
 import { Filter } from 'components/Filter/Filter';
 import { ContactForm } from 'components/ContactForm/ContactForm';
 import { ContactList } from 'components/ContactList/ContactList';
+
 import { Box, TiTle } from './App.styled';
 
 export class App extends Component {
@@ -51,6 +53,7 @@ export class App extends Component {
   render() {
     return (
       <Box>
+        <GlobalStyle />
         <TiTle>Phonebook</TiTle>
         <ContactForm onSubmit={this.formSubmitHandler} />
         <TiTle>Contacts</TiTle>

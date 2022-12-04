@@ -7,6 +7,7 @@ export const Form = styled.form`
   display: flex;
   flex-direction: column;
   gap: 10px;
+  max-width: 100%;
 `;
 
 export const Label = styled.label`
@@ -18,12 +19,12 @@ export const Label = styled.label`
 `;
 
 export const Input = styled.input`
-  width: 200px;
+  width: 100%;
   padding: 5px;
 `;
 
 export const Button = styled.button`
-  width: 100px;
+  width: 120px;
   height: 20px;
   margin: 0 auto;
   background-color: #c5d3e0;
